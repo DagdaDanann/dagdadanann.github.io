@@ -1,0 +1,446 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Susam's Feed</title><style>
+          body {
+            color: #333;
+            font-family: georgia, serif;
+            font-size: large;
+            line-height: 1.5;
+            margin: 0 auto;
+            max-width: 40em;
+            overflow-wrap: break-word;
+            padding: 0 1em;
+          }
+          h1, h2, h3, h4, h5, h6 {
+            margin: 1.25em 0 0.25em 0;
+            line-height: 1.2;
+          }
+          main h1 + div {
+            margin: 0.5em 0;
+          }
+          a:link {
+            color: #00e;
+          }
+          a:visited {
+            color: #518;
+          }
+          a:focus, a:hover {
+            color: #03f;
+          }
+          a:active {
+            color: #a00;
+          }
+          a:empty:before {
+            content: "#";
+          }
+          a:empty {
+            visibility: hidden;
+            padding-left: 0.25em;
+          }
+          :hover > a:empty {
+            visibility: visible;
+          }
+          blockquote, pre, kbd, .highlight {
+            background: #eee;
+          }
+          blockquote {
+            border-left: thick solid #ccc;
+            margin: 1em 0;
+          }
+          pre {
+            overflow: auto;
+          }
+          blockquote, pre, .highlight {
+            padding: 0.5em;
+          }
+          blockquote *:first-child, .highlight *:first-child {
+            margin-top: 0;
+          }
+          blockquote *:last-child, .highlight *:last-child {
+            margin-bottom: 0;
+          }
+          pre, code, samp, kbd, .mono {
+            font-family: monospace,monospace;
+            font-size: 0.9em;
+          }
+          pre code, pre samp, pre kbd, .mono kbd {
+            font-size: 1.0em;
+          }
+          code, samp kbd {
+            color: #050;
+          }
+          samp {
+            color: #730;
+          }
+          pre .cursor {
+            background: #730;
+            color: #eee;
+          }
+          kbd {
+            border: thin solid #ccc;
+            box-shadow: 0 0.15em 0.15em #ccc;
+            border-radius: 0.2em;
+            padding: 0.1em 0.2em;
+          }
+          samp kbd {
+            border: none;
+            box-shadow: none;
+            padding: 0;
+          }
+          ul.blog {
+            margin-top: 1.5em;
+            list-style-type: none;
+            padding: 0;
+          }
+          ul.blog li {
+            margin: 1em 0;
+          }
+          hr {
+            margin: 1.5em auto;
+            border: 0;
+            border-bottom: 0.15em dotted #999;
+          }
+          footer {
+            text-align: center;
+          }
+          nav a {
+            margin-right: 1.5em;
+            line-height: 2.5;
+          }
+          nav a:last-child  {
+            margin-right: 0;
+          }
+          @media (prefers-color-scheme: dark) {
+            body {
+              background: #111;
+              color: #bbb;
+            }
+            a:link {
+              color: #9bf;
+            }
+            a:visited {
+              color: #a9f;
+            }
+            a:focus, a:hover {
+              color: #9cf;
+            }
+            a:active {
+              color: #f99;
+            }
+            blockquote, pre, kbd, .highlight {
+              background: #000;
+              box-shadow: 0 0 0.5em #333;
+            }
+            blockquote {
+              border-left-color: #333;
+            }
+            code, pre kbd {
+              color: #9c6;
+            }
+            samp {
+              color: #db0;
+            }
+            pre .cursor {
+              background: #db0;
+              color: #000;
+            }
+            kbd {
+              border-color: #333;
+              box-shadow: 0 0.15em 0.15em #333;
+            }
+            hr {
+              border-bottom-color: #666;
+            }
+          }
+          audio {
+            min-width: 75%;
+            max-width: 100%;
+          }
+          figure {
+            text-align: center;
+            margin: 1em 0;
+          }
+          figure img, figure video {
+            max-width: 100%;
+          }
+          .stretch img {
+            width: 100%;
+          }
+          .soft img {
+            opacity: 0.8; /* (0xff - 0x33) / 0xff */
+          }
+          .lightshadow img {
+            box-shadow: 0em 0em 0.5em #999;
+          }
+          figcaption {
+            font-size: medium;
+          }
+          table {
+            margin-top: 1em;
+            margin-bottom: 1em;
+          }
+          th {
+            text-align: left;
+          }
+          th, td {
+            padding-right: 1em;
+          }
+          td *:first-child {
+            margin-top: 0;
+          }
+          td *:last-child {
+            margin-bottom: 0;
+          }
+          table.grid {
+            border-collapse: collapse;
+          }
+          table.grid th, table.grid td {
+            border-width: thin;
+            border-style: solid;
+          }
+          table.grid th, table.grid td {
+            padding: 0.3em 0.4em;
+          }
+          table.ruled {
+            border-collapse: collapse;
+            border-top-width: medium;
+            border-top-style: double;
+            border-bottom-width: medium;
+            border-bottom-style: double;
+          }
+          table.ruled thead {
+            border-bottom-width: medium;
+            border-bottom-style: double;
+          }
+          table.ruled tr {
+            border-bottom-width: thin;
+            border-bottom-style: solid;
+          }
+          table.ruled th, table.ruled td {
+            padding: 0.3em 0.4em;
+          }
+          table.top td {
+            vertical-align: top;
+          }
+          table, thead, tr, th, td {
+            border-color: #999;
+          }
+          noscript div {
+            border: medium double #900;
+            color: #900;
+            padding: 0 1em;
+          }
+          .box {
+            border: thin solid #999;
+            margin: 1em 0;
+            padding: 1em;
+          }
+          .box *:first-child {
+            margin-top: 0;
+          }
+          .box *:last-child {
+            margin-bottom: 0;
+          }
+          .textcenter {
+            text-align: center;
+          }
+          .center {
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .light {
+            display: block;
+          }
+          .dark {
+            display: none;
+          }
+          .ctrl-l:before {
+            content: "^L";
+          }
+          .hl {
+            color: #808;
+          }
+          .wrap {
+            word-break: break-all;
+            white-space: pre-wrap;
+          }
+          @media (prefers-color-scheme: dark) {
+            .soft img {
+              opacity: 0.7; /* (0xbb - 0x11) / (0xff - 0x11) */
+            }
+            .lightshadow img {
+              box-shadow: none;
+            }
+            table, thead, tr, th, td, .email {
+              border-color: #666;
+            }
+            .light {
+              display: none;
+            }
+            .dark {
+              display: block;
+            }
+            .hl {
+              color: #f9c;
+            }
+          }
+        </style></head><body><h1>Susam's Feed</h1><h2 id="bgrll"><a href="https://susam.net/roll.html">Blogroll</a><a href="#bgrll"></a></h2><div>Published on 21 Jun 2025</div><p>
+  The blogroll is available in the online copy of this website at
+  &lt;a href="https://susam.net/roll.html"&gt;susam.net/roll.html&lt;/a&gt;.
+ ...
+          </p><p><a href="https://susam.net/roll.html">Read on website</a> | <a href="https://susam.net/tag/meta.html">#meta</a></p><h2 id="owvwb"><a href="https://susam.net/code/web/overflow-wrap-vs-word-break.html">CSS Experiments: overflow-wrap vs word-break</a><a href="#owvwb"></a></h2><div>Published on 16 Jun 2025</div><p>
+  An example page demonstrating experiments with the
+  CSS &lt;code&gt;overflow-wrap&lt;/code&gt; and &lt;code&gt;word-break&lt;/code&gt;
+  properties.
+ ...
+          </p><p><a href="https://susam.net/code/web/overflow-wrap-vs-word-break.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="xjdrj"><a href="https://susam.net/feed-noise.html">Noise From My Feeds</a><a href="#xjdrj"></a></h2><div>Published on 01 Jun 2025</div><p>
+  Hello!  If you are subscribed to this website's feeds, you may have
+  noticed something odd recently.  Your feed reader might have shown a
+  bunch of old posts as if they were published today.  If that
+  happened with your feed reader, I apologise for the noise.  I hope
+  this post will give you some clarity on why this happened.  The
+  reason for this noise is a change to the way the RSS feeds are
+  generated for this website.  Each post in the feeds includes a GUID,
+  which is used by many feed readers to decide whether a post is new
+  or if it has been seen already.  Until now, the GUID was simply the
+  post's URL, like this:
+ ...
+          </p><p><a href="https://susam.net/feed-noise.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="rxpnz"><a href="https://susam.net/product-of-additive-inverses.html">Product of Additive Inverses</a><a href="#rxpnz"></a></h2><div>Published on 29 May 2025</div><p>
+  A negative number multiplied by another negative number results in a
+  positive number.  Most of us learnt this rule during our primary or
+  secondary school years.  'Negative times negative equals positive'
+  was a phrase drummed into us during mathematics lessons.  In this
+  article, we will prove this rule &amp;mdash; not just for numbers, but
+  for any algebraic structure that, in a general sense, behaves
+  somewhat like numbers.
+ ...
+          </p><p><a href="https://susam.net/product-of-additive-inverses.html">Read on website</a> | <a href="https://susam.net/tag/mathematics.html">#mathematics</a></p><h2 id="xsuzd"><a href="https://susam.net/two-ideals-of-fields.html">Two Ideals of Fields</a><a href="#xsuzd"></a></h2><div>Published on 27 May 2025</div><p>
+  A field has exactly two ideals: the zero ideal, which contains only
+  the additive identity, and the whole field itself.  These are known
+  as trivial ideals.  Further if a commutative ring, with distinct
+  additive and multiplicative identities, has no ideals other than the
+  trivial ones, then it must be a field.  These two facts are elegant
+  in their symmetry and simplicity.  In this article, we will explore
+  why these facts are true.  Familiarity with algebraic structures
+  such as groups, rings, and fields is assumed.
+ ...
+          </p><p><a href="https://susam.net/two-ideals-of-fields.html">Read on website</a> | <a href="https://susam.net/tag/mathematics.html">#mathematics</a></p><h2 id="ojxkk"><a href="https://susam.net/from-finite-integral-domains-to-finite-fields.html">From Finite Integral Domains to Finite Fields</a><a href="#ojxkk"></a></h2><div>Published on 25 May 2025</div><p>
+  In this article, we explore a few well-known results from abstract
+  algebra pertaining to fields and integral domains.  We ask ourselves
+  whether every field is an integral domain, and whether every
+  integral domain is a field.  We begin with the definition of an
+  integral domain, discuss a few established results, and then proceed
+  to answer these questions.  Familiarity with algebraic structures
+  such as rings and fields is assumed.
+ ...
+          </p><p><a href="https://susam.net/from-finite-integral-domains-to-finite-fields.html">Read on website</a> | <a href="https://susam.net/tag/mathematics.html">#mathematics</a></p><h2 id="mpqts"><a href="https://susam.net/pc.html">ASCII PC</a><a href="#mpqts"></a></h2><div>Published on 15 Apr 2025</div><p>
+  An ASCII art depiction of a PC resting on a computer case, with a
+  classic Model M keyboard placed in front.
+ ...
+          </p><p><a href="https://susam.net/pc.html">Read on website</a> | <a href="https://susam.net/tag/miscellaneous.html">#miscellaneous</a></p><h2 id="tmdms"><a href="https://susam.net/elliptical-python-programming.html">Elliptical Python Programming</a><a href="#tmdms"></a></h2><div>Published on 10 Apr 2025</div><p>
+  One thing I love about Python is how it comes with its very own
+  built-in zen.  In moments of tribulations, when I am wrestling with
+  crooked code and tangled thoughts, I often find solace in its
+  timeless wisdom.  Here's a glimpse of the clarity it provides:
+ ...
+          </p><p><a href="https://susam.net/elliptical-python-programming.html">Read on website</a> | <a href="https://susam.net/tag/python.html">#python</a></p><h2 id="ygqwk"><a href="https://susam.net/more-contrast-please.html">More Contrast, Please</a><a href="#ygqwk"></a></h2><div>Published on 07 Apr 2025</div><p>
+  So you have decided to go with a dark theme for your website.  Great
+  choice!  I love dark themes too!  My journey with computers began
+  with monochrome CRT monitors, where white text was displayed on dark
+  background.  I am still very fond of that colour scheme.  Done well,
+  dark themes can be elegant and easy on the eyes.  But there is a
+  common pitfall that I see all too often in modern web design &amp;ndash;
+  the overuse of low-contrast colour schemes.  This is something worth
+  keeping in mind while crafting a new theme.
+ ...
+          </p><p><a href="https://susam.net/more-contrast-please.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="xmajx"><a href="https://susam.net/contrast.html">Colour Contrast Calculator</a><a href="#xmajx"></a></h2><div>Published on 06 Apr 2025</div><p>
+  A simple web-based tool to calculate the contrast between two
+  colours according to WCAG contrast formula.
+ ...
+          </p><p><a href="https://susam.net/contrast.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="fcycm"><a href="https://susam.net/hn-bell.html">Hacker News Hug of Deaf</a><a href="#fcycm"></a></h2><div>Published on 05 Apr 2025</div><p>
+    "It's essentially the Hacker News Hug of Deaf."
+    &amp;ndash;
+    &lt;a href="https://news.ycombinator.com/item?id=30146019#30147639"&gt;@TonyTrapp&lt;/a&gt;
+   ...
+          </p><p><a href="https://susam.net/hn-bell.html">Read on website</a> | <a href="https://susam.net/tag/unix.html">#unix</a></p><h2 id="gyrti"><a href="https://susam.net/more-purple-links-please.html">More Purple Links, Please</a><a href="#gyrti"></a></h2><div>Published on 03 Apr 2025</div><p>
+  While I am browsing the Web, one thing I always like to see is a
+  page with purple links.  Since the early days of the Web, purple has
+  has become the default colour for visited links.  Here's a relevant
+  note from the
+  &lt;a href="https://ksi.cpsc.ucalgary.ca/archives/WWW-TALK/www-talk-1993q2.messages/47.html"&gt;changelog&lt;/a&gt;
+  of NCSA Mosaic 0.13 (1993):
+ ...
+          </p><p><a href="https://susam.net/more-purple-links-please.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="bgigh"><a href="https://susam.net/pdf-dimmer-bookmarklet.html">PDF Dimmer Bookmarklet</a><a href="#bgigh"></a></h2><div>Published on 02 Apr 2025</div><p>
+  I often read PDF documents in Firefox, and sometimes I prefer to
+  work in dark mode, especially at night when the room lights are
+  dimmed.  However, the bright white background of the Firefox PDF
+  viewer can be glaring and uncomfortable when dark mode is enabled.
+  Additionally, writing a userscript to invert the background and text
+  colours in the PDF viewer does not work.  I have confirmed with
+  Firefox version 137.0 that userscripts do not run within the PDF
+  viewer.
+ ...
+          </p><p><a href="https://susam.net/pdf-dimmer-bookmarklet.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="lpjpy"><a href="https://susam.net/code/news/mathb/1.3.0.html">MathB 1.3.0</a><a href="#lpjpy"></a></h2><div>Published on 16 Mar 2025</div><p>
+  MathB 1.3.0 is likely the final update of MathB, a web-based
+  mathematics pastebin service.  The online mathematics pastebin
+  service previously hosted at &lt;code&gt;https://mathb.in/&lt;/code&gt; has been
+  shut down today after 13 years of continuous service.  See the post
+  &lt;a href="../../../mathbin-is-shutting-down.html"&gt;MathB.in Is
+  Shutting Down&lt;/a&gt; for more details about this.  This release
+  captures the state of this project as it was today at the time of
+  shutting down the online service.
+ ...
+          </p><p><a href="https://susam.net/code/news/mathb/1.3.0.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="pevyd"><a href="https://susam.net/code/web/xormap.html">XOR Map</a><a href="#pevyd"></a></h2><div>Published on 11 Mar 2025</div><p>
+  A simple HTML page that plots bitwise-XOR &lt;em&gt;x&lt;/em&gt; and &lt;em&gt;y&lt;/em&gt;
+  for each coordinate (&lt;em&gt;x&lt;/em&gt;, &lt;em&gt;y&lt;/em&gt;)&lt;/em&gt; with the
+  coordinate (0, 0) at the bottom-left corner.
+ ...
+          </p><p><a href="https://susam.net/code/web/xormap.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="udjib"><a href="https://susam.net/lemma-for-ftgt.html">Lemma for FTGT</a><a href="#udjib"></a></h2><div>Published on 09 Mar 2025</div><p>
+  This post illustrates a key lemma that is used in proving
+  the &lt;em&gt;fundamental theorem of Galois theory&lt;/em&gt; (FTGT).  Note that
+  FTGT is not covered in this post.  The focus of this post is on
+  understanding and proving this lemma only.  Here is the lemma from
+  the book &lt;em&gt;Galois Theory&lt;/em&gt;, 5th ed. by Stewart (2023):
+ ...
+          </p><p><a href="https://susam.net/lemma-for-ftgt.html">Read on website</a> | <a href="https://susam.net/tag/mathematics.html">#mathematics</a></p><h2 id="rrbdk"><a href="https://susam.net/mathbin-is-shutting-down.html">MathB.in Is Shutting Down</a><a href="#rrbdk"></a></h2><div>Published on 23 Feb 2025</div><p>
+  Thirteen years ago, on a quiet Saturday night, I sat down and began
+  developing MathB.in.  After coding all through the night, as the sun
+  rose on Sunday, 25 March 2012, the website was ready.  I registered
+  a new domain name and shared it with a few friends who loved
+  mathematics.  Back then, we spent hours discussing fascinating
+  mathematics problems, and this website became a simple way for us to
+  share snippets with each other.  Word spread quickly&amp;mdash;my
+  friends shared it with their friends, who passed it along to others.
+  The community grew organically.  Then, one day, I announced the
+  project on the MathJax mailing list, and its reach expanded even
+  further.  Within a year, this mathematics pastebin service had users
+  from around the world.  Watching the usage of this little project
+  grow was an incredibly rewarding experience.
+ ...
+          </p><p><a href="https://susam.net/mathbin-is-shutting-down.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="fgxtg"><a href="https://susam.net/indieweb-does-not-need-to-take-off.html">The IndieWeb Doesn't Need to "Take Off"</a><a href="#fgxtg"></a></h2><div>Published on 22 Feb 2025</div><p>
+  There's a corner of the Internet where people have been reclaiming
+  their digital independence by hosting their own websites and
+  promoting the idea of owning your own content&amp;mdash;it's called the
+  IndieWeb.  This community has its
+  own &lt;a href="https://indieweb.org/"&gt;website&lt;/a&gt;, IRC channels,
+  social media presence, and more, all dedicated to the idea that
+  individuals should control their own digital presence through
+  personal websites.
+ ...
+          </p><p><a href="https://susam.net/indieweb-does-not-need-to-take-off.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="nwtao"><a href="https://susam.net/code/news/fxyt/0.5.0.html">FXYT 0.5.0</a><a href="#nwtao"></a></h2><div>Published on 11 Feb 2025</div><p>
+  FXYT 0.5.0 is a minor update of FXYT, a tiny, esoteric, stack-based,
+  postfix, canvas colouring language with only 36 simple commands.
+  This release fixes an annoying bug that has been affecting some
+  mobile device users for a while.  On some mobile web browsers, such
+  as Chrome on Samsung Galaxy S8, the drawing canvas would appear to
+  be larger than the viewport thus overflowing the visible screen on
+  the mobile device.  The user would then be required to manually zoom
+  out in order to use this tool conveniently.  This issue has been
+  fixed in this release.
+ ...
+          </p><p><a href="https://susam.net/code/news/fxyt/0.5.0.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p><h2 id="ojrjp"><a href="https://susam.net/code/news/cfrs/0.3.0.html">CFRS[] 0.3.0</a><a href="#ojrjp"></a></h2><div>Published on 10 Feb 2025</div><p>
+  CFRS[] 0.3.0 is a minor update of CFRS[], an extremely minimal
+  drawing language consisting of only 6 simple commands.  This update
+  fixes an annoying bug that caused CFRS[] canvas to overflow the
+  visible screen on some mobile web browsers.  In particular, this
+  issue was observed on Chrome running on Samsung Galaxy S8.
+ ...
+          </p><p><a href="https://susam.net/code/news/cfrs/0.3.0.html">Read on website</a> | <a href="https://susam.net/tag/web.html">#web</a></p></body></html>
